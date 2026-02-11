@@ -107,33 +107,18 @@ def render_analisis_por_variable(df, seccion_info):
     
     fig_mapa = crear_mapa_europa(
         df_filtrado,
-        titulo=f"{variable_aira} - {titulo}",
         variable_aira=variable_aira
     )
     
-    st.plotly_chart(fig_mapa, use_container_width=True)
+    st.plotly_chart(fig_mapa, width='stretch')
     
     # ==================== DISTRIBUCIÓN DE RESPUESTAS ====================
     st.subheader("📊 Distribución de Respuestas")
     
     distribucion = calcular_distribucion_respuestas(df_filtrado)
     
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        fig_barras = crear_grafico_distribucion(
-            distribucion,
-            titulo=f"Distribución de respuestas - {variable_aira}"
-        )
-        st.plotly_chart(fig_barras, use_container_width=True)
-    
-    with col2:
-        st.markdown("**Conteo de países por respuesta:**")
-        st.dataframe(
-            distribucion,
-            use_container_width=True,
-            hide_index=True
-        )
+    fig_barras = crear_grafico_distribucion(distribucion)
+    st.plotly_chart(fig_barras, width='stretch')
     
     # ==================== LISTADO DE PAÍSES POR RESPUESTA ====================
     st.subheader("🌍 Países por Categoría de Respuesta")
@@ -238,7 +223,7 @@ def render_tabla_resumen_seccion(df, seccion_key, seccion_info):
             titulo=f"Tabla Resumen - {seccion_info['nombre']}"
         )
         
-        st.plotly_chart(fig_tabla, use_container_width=True)
+        st.plotly_chart(fig_tabla, width='stretch')
         
         # Opción de descarga
         csv = df_pivot.to_csv(index=False).encode('utf-8')
@@ -274,12 +259,9 @@ def render_tabla_resumen_seccion(df, seccion_key, seccion_info):
     df_seccion_enriq = enriquecer_dataframe(df_seccion)
     distribucion_seccion_df = calcular_distribucion_respuestas(df_seccion_enriq)
     
-    fig_seccion = crear_grafico_distribucion(
-        distribucion_seccion_df,
-        titulo=f"Distribución agregada - {seccion_info['nombre']}"
-    )
+    fig_seccion = crear_grafico_distribucion(distribucion_seccion_df)
     
-    st.plotly_chart(fig_seccion, use_container_width=True)
+    st.plotly_chart(fig_seccion, width='stretch')
     
     # Métricas clave
     col1, col2, col3, col4 = st.columns(4)

@@ -68,7 +68,7 @@ def render_ml_clustering():
         st.metric("Variables AIRA", df_filled.shape[1])
     
     with col3:
-        st.metric("Codificación", "0-1-2 (No-UD-Sí)")
+        st.metric("Codificación", "0, 1, 2 (No-En desarrollo-Sí)")
     
     with st.expander("ℹ️ Ver detalles de la preparación de datos"):
         st.markdown("""
@@ -90,7 +90,7 @@ def render_ml_clustering():
         """)
         
         st.markdown("**Vista previa de datos codificados:**")
-        st.dataframe(df_filled.head(10), use_container_width=True)
+        st.dataframe(df_filled.head(10), width='stretch')
     
     st.divider()
     
@@ -127,11 +127,11 @@ def render_ml_clustering():
     
     with col1:
         fig_codo = crear_grafico_metodo_codo(inertias, k_range)
-        st.plotly_chart(fig_codo, use_container_width=True)
+        st.plotly_chart(fig_codo, width='stretch')
     
     with col2:
         fig_silhouette = crear_grafico_silhouette(silhouette_scores, k_range)
-        st.plotly_chart(fig_silhouette, use_container_width=True)
+        st.plotly_chart(fig_silhouette, width='stretch')
     
     with st.expander("ℹ️ ¿Cómo interpretar estos gráficos?"):
         st.markdown(f"""
@@ -185,7 +185,7 @@ def render_ml_clustering():
             'Aplicaciones': '{:.1f}',
             'Capacidades': '{:.1f}'
         }),
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
     
@@ -234,11 +234,11 @@ def render_ml_clustering():
     
     with tab1:
         fig_2d = crear_grafico_pca_2d(pca_coords_2d, clusters, labels)
-        st.plotly_chart(fig_2d, use_container_width=True)
+        st.plotly_chart(fig_2d, width='stretch')
     
     with tab2:
         fig_3d = crear_grafico_pca_3d(pca_coords_3d, clusters, labels)
-        st.plotly_chart(fig_3d, use_container_width=True)
+        st.plotly_chart(fig_3d, width='stretch')
     
     st.info(f"""
     **Interpretación de los gráficos:**
@@ -377,12 +377,11 @@ def render_ml_clustering():
         
         with col3:
             st.markdown("**Países en este cluster:**")
-            st.write(", ".join(perfil['paises'][:15]) + 
-                    ("..." if len(perfil['paises']) > 15 else ""))
+            st.write(", ".join(perfil['paises']))
         
         # Gráfico radar del perfil (usando el color de la tipología)
         fig_radar = crear_grafico_radar_perfil(perfil, f"Perfil Cluster {cluster_id}", color)
-        st.plotly_chart(fig_radar, use_container_width=True)
+        st.plotly_chart(fig_radar, width='stretch')
         
         # Tabla de scores detallada
         scores_df = pd.DataFrame({
@@ -390,7 +389,7 @@ def render_ml_clustering():
             'Score': [f"{v:.1f}" for v in scores_dict.values()]
         })
         
-        st.dataframe(scores_df, use_container_width=True, hide_index=True)
+        st.dataframe(scores_df, width='stretch', hide_index=True)
         
         st.divider()
     
@@ -398,7 +397,7 @@ def render_ml_clustering():
     st.header("6️⃣ Comparación entre Clusters")
     
     fig_comparacion = crear_grafico_comparacion_clusters(perfiles)
-    st.plotly_chart(fig_comparacion, use_container_width=True)
+    st.plotly_chart(fig_comparacion, width='stretch')
     
     # Tabla comparativa
     st.subheader("📊 Tabla Comparativa de Scores")
@@ -422,7 +421,7 @@ def render_ml_clustering():
             'Aplicaciones': '{:.1f}',
             'Capacidades': '{:.1f}'
         }),
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
     

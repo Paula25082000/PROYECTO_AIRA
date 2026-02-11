@@ -102,60 +102,27 @@ def render_sidebar():
         
         st.divider()
         
-        # ==================== INFORMACIÓN ADICIONAL ====================
-        st.markdown("### ℹ️ Información")
-        
-        with st.expander("📊 Sobre los datos"):
-            st.markdown("""
-            **Fuente**: WHO Europe - AIRA Survey
-            
-            **Países**: 53 de la Región Europea OMS
-            
-            **Variables**: 75 indicadores AIRA
-            
-            **Período**: 2024-2025
-            """)
-        
-        with st.expander("🔧 Tecnologías"):
-            st.markdown("""
-            - **Frontend**: Streamlit
-            - **Visualización**: Plotly
-            - **Análisis**: Pandas, NumPy
-            - **ML**: Scikit-learn
-            - **Lenguaje**: Python 3.x
-            """)
-        
-        with st.expander("📚 Metodología"):
-            st.markdown("""
-            1. **EDA**: Análisis exploratorio de datos con visualizaciones interactivas
-            
-            2. **Clustering**: K-means para identificar tipologías de países
-            
-            3. **Validación**: Coeficiente de silueta y método del codo
-            
-            4. **Visualización**: PCA para reducción dimensional
-            """)
-        
-        st.divider()
-        
         # ==================== OPCIONES ADICIONALES ====================
-        st.markdown("### ⚙️ Opciones")
+        st.markdown("### ⚙️ Tema General")
         
         # Tema (placeholder - Streamlit maneja esto automáticamente)
         st.caption("El tema se ajusta automáticamente según tu configuración del sistema.")
         
         st.divider()
         
-        # ==================== FOOTER DEL SIDEBAR ====================
-        st.markdown("""
-        <div style='text-align: center; padding: 1rem; background-color: #f8fafc; border-radius: 8px; margin-top: 2rem;'>
-            <p style='margin: 0; font-size: 0.8rem; color: #64748b;'>
-                <strong>Panel AIRA</strong><br>
-                Inteligencia de Salud Digital<br>
-                © 2025
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+        # ==================== SELECTOR DE TEMA PARA GRÁFICOS ====================
+        st.markdown("### 🎨 Tema de Gráficos")
+        
+        tema_graficos = st.radio(
+            "Selecciona el tema para los gráficos:",
+            options=["🌙 Oscuro", "☀️ Claro"],
+            index=0,  # Por defecto oscuro
+            label_visibility="collapsed",
+            help="Cambia el color de fondo y texto de los gráficos según tu preferencia"
+        )
+        
+        # Guardar tema en session state
+        st.session_state['tema_graficos'] = 'dark' if '🌙' in tema_graficos else 'light'
 
 
 # ==================== FUNCIÓN PRINCIPAL ====================

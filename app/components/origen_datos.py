@@ -91,26 +91,6 @@ def render_origen_datos():
     
     st.divider()
     
-    # ==================== ESTRUCTURA DEL DATASET ====================
-    st.subheader("📋 Estructura del Dataset")
-    
-    st.markdown("""
-    El dataset está organizado en **formato largo** (long format), donde:
-    
-    - **Cada fila** representa la respuesta de un país a una variable AIRA específica
-    - **Las columnas** contienen el código de país, la variable AIRA y la respuesta
-    """)
-    
-    # Mostrar primeras filas
-    st.markdown("**Primeras 20 filas del dataset:**")
-    st.dataframe(
-        df_enriquecido.head(20),
-        use_container_width=True,
-        hide_index=True
-    )
-    
-    st.divider()
-    
     # ==================== PAÍSES PARTICIPANTES ====================
     st.subheader("🌍 Países Participantes")
     
@@ -175,7 +155,7 @@ def render_origen_datos():
     
     st.dataframe(
         df_variables,
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
     
@@ -205,7 +185,7 @@ def render_origen_datos():
     
     st.dataframe(
         df_categorias,
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
     
@@ -226,7 +206,7 @@ def render_origen_datos():
     with col1:
         st.dataframe(
             distribucion_general_df,
-            use_container_width=True,
+            width='stretch',
             hide_index=True
         )
     
@@ -278,7 +258,7 @@ def render_origen_datos():
     
     st.dataframe(
         df_filtrado[['Pais', 'Measure_code', 'Variable_Titulo', 'Respuesta']],
-        use_container_width=True,
+        width='stretch',
         hide_index=True
     )
     
