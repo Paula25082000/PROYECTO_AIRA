@@ -36,6 +36,11 @@ if errorlevel 1 (
 )
 echo.
 
+REM Cambiar al directorio de la aplicación
+cd /d "%~dp0"
+echo Directorio actual: %CD%
+echo.
+
 REM Iniciar la aplicación
 echo [3/3] Iniciando Streamlit...
 echo.
