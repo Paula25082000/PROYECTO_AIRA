@@ -258,6 +258,29 @@ Si todo está correcto, verás en la terminal:
 
 Y la aplicación se abrirá automáticamente en tu navegador predeterminado.
 
+### Ejecutar Jupyter Notebooks
+
+Para explorar el análisis detallado paso a paso:
+
+```bash
+# Navegar a la carpeta de notebooks
+cd notebooks/
+
+# Opción 1: Iniciar Jupyter Notebook
+jupyter notebook
+
+# Opción 2: Iniciar Jupyter Lab
+jupyter lab
+
+# Opción 3: Abrir directamente en VS Code
+# Simplemente abre los archivos .ipynb en VS Code
+```
+
+**Notebooks disponibles:**
+- `preprocesamiento.ipynb` - Proceso de limpieza y validación de datos
+- `EDA.ipynb` - Análisis exploratorio de datos completo
+- `ExplicacionML.ipynb` - Documentación del clustering y machine learning
+
 ---
 
 ## 📱 Uso de la Aplicación
@@ -346,6 +369,16 @@ PROYECTO_AIRA/
         ├── eda.py                  # Análisis exploratorio
         ├── ml_clustering.py        # Machine Learning
         └── conclusiones.py         # Hallazgos y recomendaciones
+```
+
+### 🔧 Nota Sobre Rutas
+
+La aplicación utiliza **rutas relativas dinámicas** que se calculan automáticamente desde el archivo `config.py`. Esto significa que el proyecto funcionará correctamente independientemente de dónde lo instales, siempre que respetes la estructura de carpetas.
+
+```python
+# config.py calcula rutas dinámicamente
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, 'Data', 'AIRAData_final.csv')
 ```
 
 ### Descripción de Archivos Clave
@@ -632,9 +665,8 @@ furnished to do so, subject to the following conditions:
 ---
 
 ## 📞 Contacto
-
-### Fuente de Datos
-
+� GitHub: [@Paula25082000](https://github.com/Paula25082000)
+- 📊 Repositorio: [PROYECTO_AIRA](https://github.com/Paula25082000/PROYECTO_AIRA
 **WHO Regional Office for Europe**
 - 🌐 Website: [https://www.who.int/europe](https://www.who.int/europe)
 - 📧 Email: eurocontact@who.int
@@ -649,6 +681,86 @@ furnished to do so, subject to the following conditions:
 ### Soporte
 
 ¿Tienes preguntas o encontraste un problema?
+
+---
+
+## 🆘 Solución de Problemas
+
+### Error: "FileNotFoundError: Data/AIRAData_final.csv"
+
+**Causa:** Estás ejecutando la aplicación desde el directorio incorrecto.
+
+**Solución:**
+```bash
+# Asegúrate de estar en la carpeta app/ antes de ejecutar
+cd app
+streamlit run app.py
+```
+
+### Error: "ModuleNotFoundError: No module named 'streamlit'"
+
+**Causa:** Las dependencias no están instaladas.
+
+**Solución:**
+```bash
+# Instala las dependencias
+cd app
+pip install -r requirements.txt
+```
+
+### La aplicación no se abre en el navegador
+
+**Solución:**
+- Abre manualmente tu navegador y accede a: `http://localhost:8501`
+- Verifica que el puerto 8501 no esté en uso por otra aplicación
+- Si el puerto está ocupado, Streamlit usará automáticamente el siguiente disponible (8502, 8503, etc.)
+
+### Error en notebooks: "No such file or directory"
+
+**Causa:** Las rutas relativas no encuentran los archivos.
+
+**Solución para notebooks:**
+```bash
+# Los notebooks deben ejecutarse desde su propia carpeta
+cd notebooks
+jupyter notebook
+# O ábrelos directamente en VS Code
+```
+
+Los notebooks usan rutas relativas como `../Data/AIRAData_final.csv` que solo funcionan cuando se ejecutan desde la carpeta `notebooks/`.
+
+### Verificar versión de Python
+
+```bash
+python --version
+# O en algunos sistemas:
+python3 --version
+```
+
+**Requisito:** Python 3.8 o superior.
+
+### Ejecutar con modo debug
+
+Para ver errores detallados:
+
+```bash
+cd app
+streamlit run app.py --logger.level=debug
+```
+
+### Problemas con notebooks en Jupyter
+
+1. **Reinicia el kernel** del notebook: Kernel → Restart
+2. **Ejecuta las celdas en orden** de arriba hacia abajo
+3. Verifica que los archivos de datos existan en `../Data/`
+4. Si usas VS Code, asegúrate de tener la extensión de Jupyter instalada
+Paula25082000/PROYECTO_AIRA/issues) existentes
+4. Abre un [nuevo Issue](https://github.com/Paula25082000/PROYECTO_AIRA
+
+**Solución:**
+- Limpia la caché de Streamlit: Click en el menú hamburguesa (☰) → "Clear cache"
+- O ejecuta: `streamlit cache clear`
+- Recarga la página en el navegador (Ctrl+R o Cmd+R)
 
 1. Revisa la [documentación completa](app/README.md)
 2. Consulta la [guía de inicio rápido](app/INICIO_RAPIDO.md)
