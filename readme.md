@@ -10,9 +10,10 @@
 [![WHO Europe](https://img.shields.io/badge/Fuente-WHO%20Europe-0099CC)](https://www.who.int/europe)
 
 **Un análisis interactivo y exhaustivo sobre el grado de preparación de 53 países europeos en la implementación de Inteligencia Artificial en sus sistemas de salud**
+
 **[App publicada](https://datasetaira.streamlit.app/)**
 
-[📊 Características](#-características-principales) • [⚙️ Instalación](#%EF%B8%8F-instalación-rápida) • [📚 Documentación](#-documentación)
+[📊 Características](#-características-principales) • [⚙️ Instalación](#%EF%B8%8F-instalación-rápida) • [📚 Documentación](#-documentación) • [📞 Contacto](#-contacto)
 
 </div>
 
@@ -50,7 +51,7 @@ La **Inteligencia Artificial en salud** está transformando radicalmente los sis
 
 ### La Solución
 
-Este proyecto analiza los datos del cuestionario **AIRA (Assessment of Implementation Readiness for AI)** de la **Oficina Regional para Europa de la OMS**, proporcionando:
+Este proyecto analiza los datos del cuestionario **[AIRA (Assessment of Implementation Readiness for AI)](https://www.who.int/europe/health-topics)** de la **Oficina Regional para Europa de la OMS**, proporcionando:
 
 1. **Análisis Exploratorio de Datos (EDA)** exhaustivo con visualizaciones interactivas
 2. **Machine Learning (Clustering)** para identificar tipologías de países según su nivel de madurez
@@ -706,11 +707,6 @@ streamlit run app.py --logger.level=debug
 Paula25082000/PROYECTO_AIRA/issues) existentes
 4. Abre un [nuevo Issue](https://github.com/Paula25082000/PROYECTO_AIRA
 
-**Solución:**
-- Limpia la caché de Streamlit: Click en el menú hamburguesa (☰) → "Clear cache"
-- O ejecuta: `streamlit cache clear`
-- Recarga la página en el navegador (Ctrl+R o Cmd+R)
-
 ---
 
 ## 🙏 Agradecimientos
@@ -726,7 +722,7 @@ Paula25082000/PROYECTO_AIRA/issues) existentes
 - [ ] Análisis de series temporales (múltiples años de AIRA)
 - [ ] Modelos predictivos de evolución de madurez por país
 - [ ] Comparación con otras regiones de la OMS (África, Américas, Asia)
-- [ ] Internacionalización (i18n) en inglés
+- [ ] Internacionalización en inglés
 
 ---
 
