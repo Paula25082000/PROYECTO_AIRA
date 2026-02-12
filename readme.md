@@ -10,8 +10,9 @@
 [![WHO Europe](https://img.shields.io/badge/Fuente-WHO%20Europe-0099CC)](https://www.who.int/europe)
 
 **Un análisis interactivo y exhaustivo sobre el grado de preparación de 53 países europeos en la implementación de Inteligencia Artificial en sus sistemas de salud**
+**[App publicada](https://datasetaira.streamlit.app/)**
 
-[🚀 Demo](#-demo) • [📊 Características](#-características-principales) • [⚙️ Instalación](#%EF%B8%8F-instalación-rápida) • [📚 Documentación](#-documentación) • [🤝 Contribuir](#-contribución)
+[📊 Características](#-características-principales) • [⚙️ Instalación](#%EF%B8%8F-instalación-rápida) • [📚 Documentación](#-documentación)
 
 </div>
 
@@ -30,7 +31,6 @@
 - [Tecnologías](#-tecnologías)
 - [Documentación](#-documentación)
 - [Resultados Clave](#-resultados-clave)
-- [Contribución](#-contribución)
 - [Licencia](#-licencia)
 - [Contacto](#-contacto)
 
@@ -613,37 +613,6 @@ Cluster 1 - Transición Avanzada (25% de países):
 
 ---
 
-## 🤝 Contribución
-
-¡Las contribuciones son bienvenidas! Este proyecto está abierto a mejoras en:
-
-### Áreas de Contribución
-
-- 🐛 **Reportar bugs** y errores encontrados
-- 💡 **Proponer nuevas features** o visualizaciones
-- 📊 **Añadir nuevos análisis** o métricas
-- 📚 **Mejorar documentación** y tutoriales
-- 🎨 **Optimizar UI/UX** de la aplicación
-- 🔧 **Refactorizar código** para mejor rendimiento
-
-### Cómo Contribuir
-
-1. **Fork** el repositorio
-2. Crea una **rama** para tu feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un **Pull Request**
-
-### Guía de Estilo
-
-- Sigue PEP 8 para código Python
-- Documenta funciones con docstrings
-- Añade comentarios explicativos en lógica compleja
-- Escribe nombres descriptivos de variables
-- Añade tests cuando sea posible
-
----
-
 ## 📜 Licencia
 
 Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
@@ -661,26 +630,6 @@ copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 [...]
 ```
-
----
-
-## 📞 Contacto
-� GitHub: [@Paula25082000](https://github.com/Paula25082000)
-- 📊 Repositorio: [PROYECTO_AIRA](https://github.com/Paula25082000/PROYECTO_AIRA
-**WHO Regional Office for Europe**
-- 🌐 Website: [https://www.who.int/europe](https://www.who.int/europe)
-- 📧 Email: eurocontact@who.int
-- 📊 AIRA Survey: [WHO Europe Health Topics](https://www.who.int/europe/health-topics)
-
-### Equipo del Proyecto
-
-- 📧 Email: [tu-email@dominio.com](mailto:tu-email@dominio.com)
-- 💼 LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- 🐙 GitHub: [@tu-usuario](https://github.com/tu-usuario)
-
-### Soporte
-
-¿Tienes preguntas o encontraste un problema?
 
 ---
 
@@ -762,11 +711,6 @@ Paula25082000/PROYECTO_AIRA/issues) existentes
 - O ejecuta: `streamlit cache clear`
 - Recarga la página en el navegador (Ctrl+R o Cmd+R)
 
-1. Revisa la [documentación completa](app/README.md)
-2. Consulta la [guía de inicio rápido](app/INICIO_RAPIDO.md)
-3. Busca en [Issues](https://github.com/tu-usuario/AIRA-WHO-Europe/issues) existentes
-4. Abre un [nuevo Issue](https://github.com/tu-usuario/AIRA-WHO-Europe/issues/new) si no encuentras solución
-
 ---
 
 ## 🙏 Agradecimientos
@@ -774,7 +718,25 @@ Paula25082000/PROYECTO_AIRA/issues) existentes
 - **WHO Regional Office for Europe** por proporcionar los datos AIRA
 - Comunidad de **Streamlit** por el excelente framework
 - Mantenedores de las librerías **open-source** utilizadas
-- A todos los **contribuidores** que mejoran este proyecto
+
+---
+
+## 📈 Roadmap Futuro
+
+- [ ] Análisis de series temporales (múltiples años de AIRA)
+- [ ] Modelos predictivos de evolución de madurez por país
+- [ ] Comparación con otras regiones de la OMS (África, Américas, Asia)
+- [ ] Internacionalización (i18n) en inglés
+
+---
+
+## 📞 Contacto
+� GitHub: [@Paula25082000](https://github.com/Paula25082000)
+- 📊 Repositorio: (https://github.com/Paula25082000/PROYECTO_AIRA
+- 🌐 Website: [Dataset AIRA](https://datasetaira.streamlit.app/)
+- 📧 Email: paula.bosch@csic.es
+- 💼 LinkedIn: [Paula Bosch García de Araoz](www.linkedin.com/in/paula-bosch-garcía-de-araoz-795909229)
+- 📊 AIRA Survey: [WHO Europe Health Topics](https://www.who.int/europe/health-topics)
 
 ---
 
@@ -788,40 +750,11 @@ Paula25082000/PROYECTO_AIRA/issues) existentes
 
 ---
 
-## 📈 Roadmap Futuro
-
-- [ ] Integración con Azure Static Web Apps para deploy en la nube
-- [ ] Dashboard en Power BI sincronizado con datos actualizados
-- [ ] API REST para consultar datos programáticamente
-- [ ] Análisis de series temporales (múltiples años de AIRA)
-- [ ] Modelos predictivos de evolución de madurez por país
-- [ ] Comparación con otras regiones de la OMS (África, Américas, Asia)
-- [ ] Sistema de alertas automáticas para cambios en indicadores clave
-- [ ] Internacionalización (i18n) en múltiples idiomas
-
----
-
-## 📊 Estadísticas del Proyecto
-
-- **53** países analizados
-- **75** variables AIRA evaluadas
-- **~3,975** registros procesados
-- **5** secciones temáticas
-- **2** clusters identificados
-- **~90** visualizaciones generadas
-- **~2,000** líneas de código Python
-- **3** notebooks Jupyter documentados
-- **10+** gráficos interactivos en la app
-
----
-
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Made%20with-Python-blue?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Powered%20by-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
 ![Data Science](https://img.shields.io/badge/Focus-Data%20Science-green)
 ![Healthcare](https://img.shields.io/badge/Domain-Healthcare%20AI-red)
-
-**AIRA - Transformando datos en insights para mejorar la salud digital en Europa**
 
 </div>
